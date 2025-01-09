@@ -103,5 +103,31 @@ document.addEventListener("DOMContentLoaded", function () {
             menu.style.display = "none"; 
         });
     });
+
+    const dropBurgerMenu = document.querySelector(".drop_burger_menu")
+    const burgerMenu = document.querySelector(".burger_menu_lines")
+    burgerMenu.addEventListener("click", () => {
+        dropBurgerMenu.classList.toggle("burger_show")
+    })
+
+    const rubricatorTitle = document.querySelectorAll(".rubricator_title")
+    const plus = document.querySelectorAll(".rub_title_phone")
+
+
+
+    rubricatorTitle.forEach((text, index) => {
+        text.addEventListener("click", () => {
+           
+            if (plus[index].textContent.trim() === "+") {
+                plus[index].textContent = "-";
+            } else {
+                plus[index].textContent = "+";
+            }
+        })
+    })
+
+    
+    
+
 });
 

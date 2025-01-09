@@ -16,6 +16,7 @@ html {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 body {
@@ -114,7 +115,8 @@ header {
     justify-content: space-between;
 }
 
-.article_block, .pages {
+.article_block,
+.pages {
     background-color: white;
     border-radius: 5px;
     margin-top: 20px;
@@ -153,7 +155,7 @@ header {
     max-width: 200px;
     align-items: center;
     margin-right: 10px;
-
+    margin-bottom: 10px;
 }
 
 .red_rect {
@@ -164,9 +166,15 @@ header {
     background-color: black;
 }
 
+.article_tags_link {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
 .red_rect,
 .text_rect {
-    padding: 10px;
+    padding: 5px;
     height: 20px;
 }
 
@@ -177,6 +185,7 @@ header {
 
 .article_tags {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .article_text_par {
@@ -228,6 +237,7 @@ header {
     display: flex;
     margin: 0 auto;
     max-width: 1200px;
+
 }
 
 .rubricator,
@@ -247,7 +257,24 @@ header {
     color: black;
     text-decoration: none;
     font-weight: 700;
+    position: relative;
 }
+
+.rubricator_links::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    bottom: -5px;
+    left: 0;
+    transition: 0.5s;
+    border-color: red;
+}
+
+.rubricator_links:hover::after {
+    width: 100%;
+    border: 1px solid red;
+}
+
 
 .rubricator_list {
     margin-bottom: 10px;
@@ -312,7 +339,8 @@ header {
     border-bottom: 3px solid rgb(145, 145, 145);
 }
 
-.pages_prev, .pages_next {
+.pages_prev,
+.pages_next {
     color: black;
 }
 
@@ -368,6 +396,7 @@ footer .container {
     font-size: 25px;
     font-weight: 700;
     margin: 0;
+    padding-left: 0;
 }
 
 .footer_list {
@@ -382,6 +411,214 @@ footer .container {
     padding-left: 0;
 }
 
-@media(max-width: 320px) {
+.burger_menu .container {
+    display: flex;
+}
+
+.burger_menu_line {
+    width: 50px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 5px;
+    display: none;
+    margin-top: 5px;
+}
+
+.burger_menu_lines {
+    display: flex;
+    flex-direction: column;
+}
+
+.burger_show {
+    display: none;
+}
+
+.drop_burger_menu {
+    background-color: white;
+    border: 1px solid black;
+    max-width: 300px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+
+}
+
+.rubricator_phone {
+    display: none;
+}
+
+.pages_pn_after {
+    display: none;
+}
+
+@media(max-width: 925px) {
+    .rubricator_phone {
+        display: inline-block;
+    }
     
+    .header_drop {
+        display: none;
+    }
+
+    .burger_menu_line {
+        display: inline-block;
+    }
+
+    .header_drop_text {
+        display: inline;
+        font-size: 16px;
+    }
+
+    .drop_menu_list {
+        opacity: 0.5;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .rubricator_title {
+        display: inline;
+
+    }
+
+
+    .rubricator_phone summary {
+        list-style: none;
+    }
+
+    .rubricator_phone {
+        margin-top: 20px;
+    }
+
+    .rubricator_phone .rubricator_ul {
+        background-color: white;
+        border: 1px solid black;
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    .rubricator_phone details {
+        margin-bottom: 15px;
+    }
+
+    .phone {
+        display: none;
+    }
+
+    .aside_btn {
+        height: 100%;
+    }
+
+    .rub_title_phone {
+        color: red;
+    }
+
+    .header_up_block {
+        flex-direction: column;
+    }
+
+}
+
+.phone_btn {
+    display: none;
+}
+
+.pages_after {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+.btn_watches_content {
+    display: flex;
+}
+
+.watches_content {
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width: 789px) {
+    .on_top_btn {
+        display: none;
+    }
+
+    .phone_btn {
+        display: flex;
+        margin-left: 200px;
+    }
+
+    .pages .container {
+        justify-content: center;
+    }
+
+    .phone_pages {
+        display: none;
+    }
+
+    .pages_pn_after {
+        display: inline-block;
+    }
+
+}
+
+@media(max-width: 605px) {
+    .btn_watches_content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .watches_content {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .pages_numbers_num {
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    footer .container {
+        flex-wrap: wrap;
+    }
+
+    .footer_ul {
+        margin-bottom: 15px;
+    }
+
+    .article_block {
+        max-width: 300px;
+    }
+
+    .pages {
+        max-width: 100%;
+        padding: 5px;
+    }
+
+    .pages .container {
+        margin: 0 0;
+        padding: 0;
+    }
+    
+    .phone_btn {
+        margin-left: 100px;
+    }
+}
+
+@media(max-width: 335px) {
+    
+    .container {
+        padding: 5px;
+    }
+
+    .rubricator_phone {
+        margin-left: 5px;
+    }
+
+    .article_tag_text {
+        font-size: 14px;
+    }
+
+    .article_tag_img {
+        max-width: 15px;
+    }
 }
